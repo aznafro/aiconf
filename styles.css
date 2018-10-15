@@ -104,7 +104,8 @@ header::after {
 
 .section__blue a,
 .section__blue a:visited,
-.section__blue th {
+.section__blue th,
+.section__blue td {
 	color: white;
 }
 
