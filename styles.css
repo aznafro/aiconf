@@ -87,7 +87,8 @@ header::after {
 	GRID/SECTION RELATED
 
 **/
-.container {
+.container,
+.hero {
 	width: 1100px;
 	margin: 0 auto 35px auto;
 }
@@ -97,6 +98,20 @@ header::after {
 	padding: 125px 0;
 }
 
+.section__blue {
+	padding: 125px 0;
+}
+
+.section__blue a,
+.section__blue a:visited,
+.section__blue th {
+	color: white;
+}
+
+.section__blue .text-grey {
+	color: lightgrey;
+}
+
 .section p {
 	color: #0E5773;
 }
@@ -104,6 +119,7 @@ header::after {
 [class^="col"] {
 	display: inline-block;
 	padding: 0 15px;
+	vertical-align: top;
 }
 
 .col-1-5 {
@@ -135,6 +151,7 @@ h1 {
 
 h2 {
 	font-size: 32px;
+	text-transform: uppercase;
 }
 
 h2 {
@@ -149,17 +166,13 @@ h4, p {
 	font-size: 16px;
 }
 
-[class$="__text"] {
-	vertical-align: top;
-}
-
-[class$="__text"] p {
+.events__text p {
 	font-size: 18px;
 	line-height: 23px;
 }
 
-[class$="__text"] h2,
-[class$="__text"] p {
+.events__text h2,
+.events__text p {
 	text-align: right;
 }
 
@@ -183,8 +196,28 @@ a:hover {
 	color: #033F56;
 }
 
-.selected {
-	background-color: white;
+/**
+
+	BUTTONS
+
+**/
+.btn,
+.btn:link,
+.btn:visited {
+	display: inline-block;
+	text-decoration: none;
+	color: #890000;
+	border: none;
+	padding: 10px 18px;
+	border-radius: 5px;
+	border: 1px solid #890000;
+	transition: .2s;
+}
+
+.btn:hover {
+	color: white;
+	background-color: #890000;
+	cursor: pointer;
 }
 
 /**
@@ -223,6 +256,7 @@ a:hover {
 
 .nav li {
 	display: inline-block;
+	position: relative;
 }
 
 .nav a {
@@ -243,9 +277,31 @@ a:hover {
 	transition: .2s;
 }
 
-.nav a:hover::before {
+.nav li::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	height: 25px;
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 100%;
+	width: 0;
+	transition: .2s;
+	z-index: -2;
+}
+
+.nav a:hover::before,
+.nav li:hover::after {
 	width: 100%;
 	left: 0;
+}
+
+.nav li:hover::after {
+	padding: 0 5px;
+}
+
+.watermark {
+	float: left;
 }
 
 .primary-nav {
@@ -280,11 +336,28 @@ a:hover {
 
 **/
 .events {
-	padding-top: 200px;
+	padding: 170px 0;
+	background-image: url(images/ai-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 20%;
 }
 
 .events h2 {
 	margin-top: -20px;
+}
+
+.events span {
+	padding: 5px 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-box-decoration-break: clone;
+	   -moz-box-decoration-break: clone;
+	        box-decoration-break: clone;
+}
+
+.events p {
+	line-height: 40px;
+	margin: 0 5px;
 }
 
 .image-tiles {
@@ -339,13 +412,13 @@ a:hover {
 }
 
 .image-tiles a:nth-child(2) {
-	top: -75px;
-	left: 95px;
+	top: -15px;
+	left: -10px;
 }
 
 .image-tiles a:nth-child(3) {
-	top: -15px;
-	left: -10px;
+	top: 50px;
+	left: 110px;
 }
 
 /**
@@ -358,14 +431,15 @@ a:hover {
 	line-height: 35px;
 }
 
-.map {
-	vertical-align: top;
+.location img {
+	float: right;
+	padding: 10px;
+	border: 1px solid #0E5773;
+	border-radius: 5px;
 }
 
-.location iframe {
-	width: 90%;
-	height: 320px;
-	float: right;
+.location .btn {
+	margin-top: 15px;
 }
 
 /**
@@ -373,23 +447,27 @@ a:hover {
 	ATTENDEES
 
 **/
+.attendees {
+	padding: 66px 0;
+}
+
 .attendees h2 {
+	color: white;
 	text-align: center;
 	margin-bottom: 88px;
 	font-size: 44px;
 }
 
-.attendees article:hover .entity {
-	transform: translateY(-10px) scale(1.1);
-	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+.entity:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
 }
 
 .entity {
 	display: block;
 	padding: 25px 0;
-	background: #0E5773;
 	text-align: center;
-	border-radius: 3px;
+	border-radius: 25%;
 	transition: .2s;
 }
 
@@ -419,20 +497,6 @@ i {
 	margin: 44px 0;
 }
 
-.register a {
-	color: #0E5773;
-	border-radius: 5px;
-	border: 1px solid #0E5773;
-	padding: 10px 18px;
-	transition: .2s;
-}
-
-.register a:hover {
-	color: white;
-	background-color: #0E5773;
-}
-
-
 /**
 
 	FOOTER
@@ -444,4 +508,220 @@ footer {
 
 footer a {
 	font-size: 14px;
+}
+
+
+.heading {
+	text-align: center;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.heading h1 {
+	margin-bottom: 35px;
+}
+
+.heading p {
+	font-size: 20px;
+	line-height: 25px;
+}
+
+/*****************************
+==============================
+		  EVENTS PAGE
+==============================
+*****************************/
+.event {
+	padding: 66px 0;
+}
+
+.event:nth-child(even) {
+	text-align: right;
+}
+
+.company {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+	margin-top: 48px;
+}
+
+.company img {
+	margin-top: -48px;
+	width: 150px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.company a {
+	color: #0E5773;
+	display: block;
+	text-align: center;
+	opacity: .9;
+}
+
+.company div {
+	margin-top: 15px;
+}
+
+/*****************************
+==============================
+		 LOCATION PAGE
+==============================
+*****************************/
+iframe {
+	width: 100%;
+	height: 350px;
+	float: right;
+	padding: 20px;
+	border: 1px solid #0E5773;
+	border-radius: 5px;
+}
+
+.address h3,
+.address a {
+	color: #0E5773;
+}
+
+.address h3 {
+	font-size: 38px;
+	line-height: 38px;
+	margin-bottom: 25px;
+}
+
+/*****************************
+==============================
+		 SCHEDULE PAGE
+==============================
+*****************************/
+table {
+	color: #0E5773;
+	letter-spacing: 2px;
+	margin: 0 auto;
+}
+
+thead th {
+	font-size: 30px;
+	font-weight: 400;
+	padding-right: 40px;
+}
+
+thead td {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+thead th,
+thead td {
+	padding-bottom: 20px;
+}
+
+tbody th {
+	padding-right: 40px;
+}
+
+tbody td {
+	padding: 15px 30px 30px 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+table h4 {
+	margin-bottom: 5px;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+table a,
+table a:visited {
+	color: #0E5773;
+}
+
+.text-grey {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+/*****************************
+==============================
+		 REGISTER PAGE
+==============================
+*****************************/
+fieldset {
+	color: #0E5773;
+	padding: 15px;
+}
+
+label {
+	display: block;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+label:hover {
+	cursor: pointer;
+}
+
+.select-box {
+	margin-top: 10px;
+}
+
+select {
+	margin-bottom: 20px;
+	padding: 3px 5px;
+	border-radius: 5px;
+	width: 50px;
+	font-size: 16px;
+}
+
+select:focus {
+	outline: none;
+}
+
+input {
+	border-radius: 5px;
+	border: 1px solid #0E5773;
+	font-size: 18px;
+	padding: 12px 0 12px 12px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+input:focus {
+	outline: none;
+}
+
+li {
+	color: #0E5773;
+}
+
+.register__text h3 {
+	color: #0E5773;
+}
+
+.register__text ul {
+	margin-bottom: 25px;
+	list-style: square;
+}
+
+.register__text ul li {
+	margin-left: 45px;
+}
+
+.radio,
+.radio input {
+	display: inline-block;
+}
+
+.radio input {
+	width: auto;
+}
+
+.radio {
+	width: 50%;
+	font-size: 19px;
+}
+
+fieldset a {
+	float: right;
 }
