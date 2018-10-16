@@ -101,10 +101,10 @@ table {
 
 .section {
 	background-color: white;
-	padding: 125px 0;
 }
 
-.row {
+.row,
+.section {
 	padding: 100px 0;
 }
 
@@ -169,7 +169,7 @@ p {
 
 i {
 	font-size: 25px;
-	color: white;
+	color: inherit;
 }
 
 .section h1,
@@ -237,6 +237,19 @@ a:hover {
 
 /**
 
+	HELPER
+
+**/
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/**
+
 	HEADER
 
 **/
@@ -276,10 +289,6 @@ header::after {
 	NAV
 
 **/
-.nav {
-	text-align: right;
-}
-
 .nav li {
 	display: inline-block;
 	position: relative;
@@ -337,11 +346,9 @@ header::after {
 **/
 .hero {
 	padding: 44px 0;
-	text-align: center; 
 }
 
 .hero h2 {
-	font-size: 42px;
 	margin-bottom: 32px;
 }
 
@@ -362,11 +369,6 @@ header::after {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 20%;
-}
-
-.events h3,
-.events p {
-	text-align: right;
 }
 
 .events h3 {
@@ -431,7 +433,6 @@ header::after {
 	left: 50%;
 	opacity: 0;
 	transform: translate(-50%, -50%) rotateX(90deg);
-	text-align: center;
 	font-weight: 700;
 	font-size: 56px;
 	transition: .5s;
@@ -478,7 +479,6 @@ header::after {
 
 .attendees h3 {
 	color: white;
-	text-align: center;
 	margin-bottom: 44px;
 }
 
@@ -490,7 +490,6 @@ header::after {
 .entity {
 	display: block;
 	padding: 25px 0;
-	text-align: center;
 	border-radius: 25%;
 	transition: .2s;
 }
@@ -507,10 +506,6 @@ header::after {
 	REGISTER
 
 **/
-.register {
-	text-align: center;
-}
-
 .register p {
 	margin: 44px 0;
 }
@@ -544,7 +539,6 @@ footer a {
 .company {
 	width: 80%;
 	margin: 0 auto;
-	text-align: center;
 	border-radius: 5px;
 	margin-top: 48px;
 }
@@ -559,7 +553,6 @@ footer a {
 .company a {
 	color: #0E5773;
 	display: block;
-	text-align: center;
 	opacity: .9;
 }
 
