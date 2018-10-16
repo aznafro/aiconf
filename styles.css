@@ -705,7 +705,7 @@ li {
 	list-style: square;
 }
 
-.register__text ul li {
+.register__text li {
 	margin-left: 45px;
 }
 
@@ -723,6 +723,6 @@ li {
 	font-size: 19px;
 }
 
-fieldset a {
+.purchase {
 	float: right;
 }
